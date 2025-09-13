@@ -1,4 +1,4 @@
-package com.practise.goldman_problems.medium;
+package com.practise.goldman_problems.topic.arrays.medium;
 
 public class MaximumSubarray {
 

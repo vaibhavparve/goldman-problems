@@ -8,6 +8,7 @@ import java.util.TreeMap;
 public class HighFivePriorityQueue {
 
     /*not storing the values more than 5 */
+    /*not storing the values more than 5 */
 
     public int[][] highFive(int[][] items) {
         Map<Integer, PriorityQueue<Integer>> studentScores = new TreeMap<>();

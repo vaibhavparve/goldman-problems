@@ -1,4 +1,4 @@
-package com.practise.goldman_problems.medium;
+package com.practise.goldman_problems.topic.intervals.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;

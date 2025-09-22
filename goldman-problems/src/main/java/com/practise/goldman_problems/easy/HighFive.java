@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.TreeMap;
 
 /*
@@ -46,6 +47,40 @@ public class HighFive {
             result[index][1] = average;
             index++;
         }
+        return result;
+    }
+
+    public int[][] highFiveQ(int[][] items) {
+
+        Map<Integer, PriorityQueue<Integer>> scores = new TreeMap<>();
+
+        for (int[] item : items) {
+            int key = item[0];
+            scores.computeIfAbsent(key, k -> new PriorityQueue<>());
+            PriorityQueue<Integer> ss = scores.get(key);
+            ss.offer(item[1]);
+
+            if (ss.size() > 5) {
+                ss.poll();
+            }
+        }
+
+        int[][] result = new int[items.length][];
+        int index = 0;
+        for (Map.Entry<Integer, PriorityQueue<Integer>> entry : scores.entrySet()) {
+            PriorityQueue<Integer> value = entry.getValue();
+
+            int sum = 0;
+            while (!value.isEmpty()) {
+                sum = sum + value.poll();
+            }
+            int average = sum / 5;
+
+            result[index][0] = entry.getKey();
+            result[index][1] = average;
+            index++;
+        }
+
         return result;
     }
 }

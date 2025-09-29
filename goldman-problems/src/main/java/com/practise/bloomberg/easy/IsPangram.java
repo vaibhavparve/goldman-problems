@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class IsPangram {
     public boolean isSentencePangram(String sentence){
-        //sentence is pangram if it contains atlest one of all the letters of english
+        //sA pangram is a sentence where every letter of the English alphabet appears at least once.
         //corner case
         if(sentence.length()< 26){
             return false;

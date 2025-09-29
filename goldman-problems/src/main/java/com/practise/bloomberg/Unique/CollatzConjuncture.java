@@ -28,16 +28,8 @@ public class CollatzConjuncture {
 
         int steps = 0;
         long current = num;
-        Map<Long, Integer> tempPath = new HashMap<>();
-
         //itertive approach to avoid stackoverflow
         while (current != 1) {
-            if (tempPath.containsKey(current)) {
-                //cycle found
-                break;
-            }
-            tempPath.put(current, steps);
-
             SoftReference<Integer> currentRef = softCache.get(current);
             if (currentRef != null) {
                 Integer cachedSteps = currentRef.get();
@@ -71,9 +63,7 @@ public class CollatzConjuncture {
     }
 
     static void main() {
-        CollatzConjuncture test = new CollatzConjuncture();
-
-        System.out.println(STR."Collatz \{CollatzConjuncture.getCollatz(5L)}");
+        System.out.println(STR."Collatz \{CollatzConjuncture.getCollatz(27L)}");
     }
 
 }

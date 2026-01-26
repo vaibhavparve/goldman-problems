@@ -12,6 +12,7 @@ public class MergeIntervals {
      *
      * */
     public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         int m = intervals.length;
         List<int[]> merged = new ArrayList<>();
